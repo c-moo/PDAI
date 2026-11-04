@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="PDAI"
-run/main_scene="uid://dkaac3f75h6yo"
+run/main_scene="uid://pqjjorpy1gom"
 config/features=PackedStringArray("4.7", "Forward Plus")
 
 [display]
