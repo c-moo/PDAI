@@ -1,9 +1,9 @@
 extends CharacterBody2D
 
 var direction_x: float
-const SPEED := 100
-const JUMP_STRENGTH = -100
-const GRAVITY := 10
+@export var SPEED := 150
+@export var JUMP_STRENGTH = -200
+@export var GRAVITY := 10
 @export var coins := 0
 
 func get_input():
