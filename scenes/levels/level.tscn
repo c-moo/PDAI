@@ -22,4 +22,4 @@ position = Vector2(27, -10)
 [node name="collectables" type="Node2D" parent="." unique_id=1298582579]
 
 [node name="lager" parent="collectables" unique_id=1535600428 instance=ExtResource("2_bovvr")]
-position = Vector2(67, -14)
+position = Vector2(69, -14)

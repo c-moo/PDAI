@@ -3,15 +3,19 @@
 [ext_resource type="Texture2D" uid="uid://v8eatc6uujla" path="res://graphics/Screenshot 2026-11-02 142006.png" id="1_st8qq"]
 [ext_resource type="Script" uid="uid://c0ididovuh5m1" path="res://scenes/entities/lager.gd" id="1_udtdo"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vr3we"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vr3we"]
+size = Vector2(16, 23)
 
 [node name="lager" type="Area2D" unique_id=1535600428]
 script = ExtResource("1_udtdo")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1056332979]
-shape = SubResource("CapsuleShape2D_vr3we")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1544486381]
 position = Vector2(1.7881393e-07, 0.50000036)
 scale = Vector2(0.057142857, 0.06478873)
 texture = ExtResource("1_st8qq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1911193893]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_vr3we")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

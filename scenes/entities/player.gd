@@ -4,6 +4,7 @@ var direction_x: float
 const SPEED := 100
 const JUMP_STRENGTH = -100
 const GRAVITY := 10
+@export var coins := 0
 
 func get_input():
 	direction_x = Input.get_axis("left", "right")
