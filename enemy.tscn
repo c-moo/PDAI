@@ -4,19 +4,19 @@
 [ext_resource type="Texture2D" uid="uid://bgawg4ixjvyq1" path="res://assets/enemies/enemy1.jpg" id="2_qi2p4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ha3k7"]
-size = Vector2(99, 82)
+size = Vector2(31, 26)
 
 [node name="Enemy" type="CharacterBody2D" unique_id=898509981]
-position = Vector2(215, -103)
+position = Vector2(217, -86)
 script = ExtResource("1_4gyqm")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=223735802]
-position = Vector2(2.5, 1)
+position = Vector2(-22, 18)
 shape = SubResource("RectangleShape2D_ha3k7")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=879621333]
-position = Vector2(2, 1)
-scale = Vector2(0.13749996, 0.11621623)
+position = Vector2(-22.000004, 17)
+scale = Vector2(0.045138877, 0.040540554)
 texture = ExtResource("2_qi2p4")
 
 [node name="Timer" type="Timer" parent="." unique_id=720641342]

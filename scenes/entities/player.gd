@@ -43,3 +43,6 @@ func _physics_process(_delta: float) -> void:
 		
 	apply_gravity()
 	move_and_slide()
+	
+func _ready():
+	Global.playerBody = self
