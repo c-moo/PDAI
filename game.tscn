@@ -3,6 +3,9 @@
 [ext_resource type="PackedScene" uid="uid://pqjjorpy1gom" path="res://first-level.tscn" id="1_e2o6t"]
 [ext_resource type="PackedScene" uid="uid://bmryjg6sseq82" path="res://scenes/entities/player.tscn" id="2_feb5d"]
 [ext_resource type="PackedScene" uid="uid://2oqfqxx5b61g" path="res://enemy.tscn" id="3_feb5d"]
+[ext_resource type="PackedScene" uid="uid://dx3u2n8agyfok" path="res://scenes/killzone.tscn" id="4_fc0e3"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_tn83y"]
 
 [node name="Game" type="Node2D" unique_id=656759787]
 
@@ -15,5 +18,12 @@ position = Vector2(-2, 32)
 position = Vector2(5, 5)
 
 [node name="Enemy" parent="." unique_id=898509981 instance=ExtResource("3_feb5d")]
+
+[node name="Killzone" parent="." unique_id=1480654919 instance=ExtResource("4_fc0e3")]
+position = Vector2(1118, 56)
+collision_mask = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone" unique_id=700802439]
+shape = SubResource("WorldBoundaryShape2D_tn83y")
 
 [editable path="CharacterBody2D"]
