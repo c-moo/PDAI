@@ -15,6 +15,7 @@ var wall_jump_timer := 0.0
 func get_input():
 	direction_x = Input.get_axis("left", "right")
 	if Input.is_action_just_pressed("jump"):
+		
 		if is_on_floor():
 			jumps_left = MAX_JUMPS
 		if is_on_wall():
