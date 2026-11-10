@@ -6,6 +6,12 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vr3we"]
 size = Vector2(14, 24)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ha3k7"]
+size = Vector2(20, 6)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vnuri"]
+size = Vector2(18, 28)
+
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=541745859]
 script = ExtResource("1_08t41")
 
@@ -25,3 +31,19 @@ shape = SubResource("RectangleShape2D_vr3we")
 position = Vector2(-4.7683716e-07, 1.9073486e-06)
 scale = Vector2(0.011214115, 0.019138755)
 texture = ExtResource("1_ucweq")
+
+[node name="DamageZone" type="Area2D" parent="." unique_id=704491951]
+collision_layer = 0
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DamageZone" unique_id=1817675574]
+position = Vector2(20, -1)
+shape = SubResource("RectangleShape2D_ha3k7")
+
+[node name="CharacterHitbox" type="Area2D" parent="." unique_id=1934439687]
+collision_layer = 2
+collision_mask = 0
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterHitbox" unique_id=838305767]
+shape = SubResource("RectangleShape2D_vnuri")

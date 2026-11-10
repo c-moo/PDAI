@@ -9,6 +9,9 @@ size = Vector2(43, 35)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vnuri"]
 size = Vector2(47, 41.5)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_elhfd"]
+size = Vector2(64, 46)
+
 [node name="Enemy" type="CharacterBody2D" unique_id=898509981]
 position = Vector2(181, -29)
 script = ExtResource("1_4gyqm")
@@ -26,9 +29,20 @@ texture = ExtResource("2_qi2p4")
 wait_time = 2.0
 autostart = true
 
-[node name="hitbox" type="Area2D" parent="." unique_id=1921925011]
+[node name="HitboxEnemy" type="Area2D" parent="." unique_id=1921925011]
 position = Vector2(18, -22)
+collision_layer = 8
+collision_mask = 0
+monitoring = false
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox" unique_id=447593069]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxEnemy" unique_id=447593069]
 position = Vector2(12, -1.25)
 shape = SubResource("RectangleShape2D_vnuri")
+
+[node name="DamageAreaEnemy" type="Area2D" parent="." unique_id=327225608]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DamageAreaEnemy" unique_id=547142654]
+position = Vector2(29, -23)
+shape = SubResource("RectangleShape2D_elhfd")
