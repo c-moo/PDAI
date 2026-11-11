@@ -1,11 +1,13 @@
 extends CharacterBody2D
 
+class_name Player
+
 var direction_x: float
-@export var SPEED := 150
+@export var SPEED := 760
 @export var JUMP_STRENGTH = -250
 @export var GRAVITY := 10
 @export var coins := 0
-@export var MAX_JUMPS := 2
+@export var MAX_JUMPS := 200
 
 var jumps_left := MAX_JUMPS
 const WALL_JUMP_STRENGTH:= 0.75
