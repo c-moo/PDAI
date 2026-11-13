@@ -5,6 +5,8 @@ class_name Enemy
 const speed = 80
 var is_enemy_chase: bool = true
 var health: int = 100 #health bar sit
+var health_max = 100
+var health_min = 0
 
 var dead: bool = false
 var taking_damage: bool = false
@@ -95,6 +97,7 @@ func attack_player_loop():
 		return
 	can_damage_player = false
 	while player_overlapping and !dead and Global.characterAlive:
+		print("test")
 		if Global.playerBody == null:
 			break
 		Global.playerBody.take_damage(damage_to_deal)
