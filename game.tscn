@@ -1,29 +1,22 @@
 [gd_scene format=3 uid="uid://ct06eyeoca8gg"]
 
-[ext_resource type="PackedScene" uid="uid://pqjjorpy1gom" path="res://first-level.tscn" id="1_e2o6t"]
+[ext_resource type="Script" uid="uid://dojr48acffvca" path="res://assets/scripts/main.gd" id="1_7jktm"]
 [ext_resource type="PackedScene" uid="uid://bmryjg6sseq82" path="res://scenes/entities/player.tscn" id="2_feb5d"]
 [ext_resource type="PackedScene" uid="uid://2oqfqxx5b61g" path="res://enemy.tscn" id="3_feb5d"]
-[ext_resource type="PackedScene" uid="uid://dx3u2n8agyfok" path="res://scenes/killzone.tscn" id="4_fc0e3"]
-
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_tn83y"]
 
 [node name="Game" type="Node2D" unique_id=656759787]
+script = ExtResource("1_7jktm")
 
-[node name="TileMap" parent="." unique_id=1136710093 instance=ExtResource("1_e2o6t")]
-position = Vector2(-2, 32)
+[node name="World" type="Node" parent="." unique_id=1467323747]
 
 [node name="CharacterBody2D" parent="." unique_id=541745859 instance=ExtResource("2_feb5d")]
+position = Vector2(12, -32)
+metadata/_edit_group_ = true
 
 [node name="Camera2D" parent="CharacterBody2D" index="0" unique_id=319896125]
 position = Vector2(5, 5)
 
 [node name="Enemy" parent="." unique_id=898509981 instance=ExtResource("3_feb5d")]
-
-[node name="Killzone" parent="." unique_id=1480654919 instance=ExtResource("4_fc0e3")]
-position = Vector2(1118, 56)
-collision_mask = 1
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone" unique_id=700802439]
-shape = SubResource("WorldBoundaryShape2D_tn83y")
+position = Vector2(733, -129)
 
 [editable path="CharacterBody2D"]
