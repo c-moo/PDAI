@@ -2,8 +2,14 @@ extends CharacterBody2D
 
 class_name Player
 
+
+@onready var jump_sound = $Sounds/jump_sound
+@onready var hurt_sound = $Sounds/hurt_sound
+@onready var coin_sound = $Sounds/coin_sound
+@onready var attack_sound = $Sounds/attack_sound
 var direction_x: float
-@export var SPEED := 760
+
+@export var SPEED := 400
 @export var JUMP_STRENGTH = -250
 @export var GRAVITY := 10
 @export var coins := 0
@@ -37,8 +43,9 @@ func get_input():
 			velocity.x = get_wall_normal().x * SPEED * WALL_JUMP_STRENGTH
 			velocity.y = -SPEED * WALL_JUMP_STRENGTH
 			wall_jumping = true
-			wall_jump_timer = 0.3
+			wall_jump_timer = 0.1
 		if jumps_left > 0:
+			jump_sound.play()
 			velocity.y = JUMP_STRENGTH
 			jumps_left -= 1
 		
@@ -75,7 +82,7 @@ func attack ():
 	
 	for area in $DamageZone.get_overlapping_areas():
 		damage_enemy(area)
-		
+		attack_sound.play()
 	await get_tree().create_timer(attack_duration).timeout
 	is_attacking = false
 	
@@ -86,6 +93,7 @@ func attack ():
 func _on_damage_area_area_entered(area: Area2D):
 	if is_attacking:
 		damage_enemy(area)
+		
 func damage_enemy(area: Area2D):
 	if !is_attacking:
 		return
@@ -94,6 +102,7 @@ func damage_enemy(area: Area2D):
 		if hit_enemies.has(enemy):
 			return
 		if enemy.dead:
+			hurt_sound.play()
 			return
 		hit_enemies.append(enemy)
 		enemy.take_damage(attack_damage)
