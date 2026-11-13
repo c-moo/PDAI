@@ -2,6 +2,10 @@
 
 [ext_resource type="Script" uid="uid://dpsdew4ixkdha" path="res://scenes/entities/player.gd" id="1_08t41"]
 [ext_resource type="Texture2D" uid="uid://bbm8k0mllq3kk" path="res://graphics/a07f1bdd-8bc3-477e-9816-e63e23741145.png" id="1_ucweq"]
+[ext_resource type="AudioStream" uid="uid://6idmqrmus4ag" path="res://sounds/jump.wav" id="3_1ie0h"]
+[ext_resource type="AudioStream" uid="uid://d0wwdw0pe15dh" path="res://sounds/hurt.wav" id="4_42nxq"]
+[ext_resource type="AudioStream" uid="uid://dvbkwegqntcuq" path="res://sounds/coin.wav" id="5_d4qa6"]
+[ext_resource type="AudioStream" uid="uid://dy3lvur5knlbr" path="res://sounds/tap.wav" id="6_ss7kx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vr3we"]
 size = Vector2(14, 24)
@@ -47,3 +51,21 @@ monitoring = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterHitbox" unique_id=838305767]
 shape = SubResource("RectangleShape2D_vnuri")
+
+[node name="Sounds" type="Node" parent="." unique_id=1915223294]
+
+[node name="jump_sound" type="AudioStreamPlayer" parent="Sounds" unique_id=89933008]
+stream = ExtResource("3_1ie0h")
+volume_db = -25.0
+
+[node name="hurt_sound" type="AudioStreamPlayer" parent="Sounds" unique_id=892031666]
+stream = ExtResource("4_42nxq")
+volume_db = -25.0
+
+[node name="coin_sound" type="AudioStreamPlayer" parent="Sounds" unique_id=637028807]
+stream = ExtResource("5_d4qa6")
+volume_db = -25.0
+
+[node name="attack_sound" type="AudioStreamPlayer" parent="Sounds" unique_id=731281975]
+stream = ExtResource("6_ss7kx")
+volume_db = -25.0
