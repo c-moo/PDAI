@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dojr48acffvca" path="res://assets/scripts/main.gd" id="1_7jktm"]
 [ext_resource type="PackedScene" uid="uid://bmryjg6sseq82" path="res://scenes/entities/player.tscn" id="2_feb5d"]
-[ext_resource type="PackedScene" uid="uid://2oqfqxx5b61g" path="res://enemy.tscn" id="3_feb5d"]
+[ext_resource type="PackedScene" uid="uid://2oqfqxx5b61g" path="res://scenes/entities/enemy.tscn" id="3_feb5d"]
 
 [node name="Game" type="Node2D" unique_id=656759787]
 script = ExtResource("1_7jktm")
