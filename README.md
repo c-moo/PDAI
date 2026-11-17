@@ -15,3 +15,4 @@ Pelin ideaa ei ole kiveenhakattu (vielä), muutakuin että se on lineaarinen 2D 
 Pelissä käytetyt assetit on otettu sivuilta kuten "itch.io" ja "opengameart.org" 
 
 ### Kuva yhdestä pelikentästä
+![part of the second level in the game](assets/git_image/level2design.png)
