@@ -34,6 +34,9 @@ func _process(delta):
 		velocity.y += gravity * delta
 		velocity.x = 0
 		
+	if is_on_wall() and is_on_floor():
+		velocity.y = -125
+		
 	if Global.characterAlive:
 		is_enemy_chase = true
 	else:
