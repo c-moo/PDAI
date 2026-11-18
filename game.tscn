@@ -15,8 +15,12 @@ metadata/_edit_group_ = true
 
 [node name="Camera2D" parent="CharacterBody2D" index="0" unique_id=319896125]
 position = Vector2(5, 5)
+zoom = Vector2(3.3, 3.3)
+limit_top = -140
+limit_bottom = 5
 
 [node name="Enemy" parent="." unique_id=898509981 instance=ExtResource("3_feb5d")]
 position = Vector2(733, -129)
+collision_layer = 2
 
 [editable path="CharacterBody2D"]
