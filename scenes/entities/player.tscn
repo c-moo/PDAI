@@ -170,7 +170,7 @@ _data = {
 &"idle": SubResource("Animation_saib0"),
 &"wall": SubResource("Animation_ogpgs")
 }
-=======
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ha3k7"]
 size = Vector2(20, 6)
 
@@ -188,11 +188,6 @@ position_smoothing_enabled = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=852629338]
 shape = SubResource("RectangleShape2D_vr3we")
-
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2087655174]
-position = Vector2(-4.7683716e-07, 1.9073486e-06)
-scale = Vector2(0.011214115, 0.019138755)
-texture = ExtResource("1_ucweq")
 
 [node name="CharacterHitbox" type="Area2D" parent="." unique_id=1934439687]
 collision_layer = 2
