@@ -1,8 +1,12 @@
 extends Node
 
 const LEVELS = [
-	"res://scenes/levels/first-level.tscn",
 	"res://scenes/levels/2nd-level.tscn",
+	
+	"res://scenes/levels/first-level.tscn",
+	
+	"res://scenes/levels/2nd-level.tscn",
+	
 	"res://scenes/levels/level.tscn",
 ]
 

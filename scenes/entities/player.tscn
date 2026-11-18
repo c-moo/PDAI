@@ -4,17 +4,18 @@
 [ext_resource type="AudioStream" uid="uid://6idmqrmus4ag" path="res://sounds/jump.wav" id="3_1ie0h"]
 [ext_resource type="AudioStream" uid="uid://d0wwdw0pe15dh" path="res://sounds/hurt.wav" id="4_42nxq"]
 [ext_resource type="AudioStream" uid="uid://dvbkwegqntcuq" path="res://sounds/coin.wav" id="5_d4qa6"]
-[ext_resource type="Texture2D" uid="uid://blbigpxpk2pl8" path="res://graphics/head.png" id="6_c5rqy"]
+
 [ext_resource type="AudioStream" uid="uid://dy3lvur5knlbr" path="res://sounds/tap.wav" id="6_ss7kx"]
+[ext_resource type="Texture2D" uid="uid://blbigpxpk2pl8" path="res://graphics/head.png" id="6_c5rqy"]
 [ext_resource type="Texture2D" uid="uid://dx6rc3cex4xx" path="res://graphics/body.png" id="7_b6tgf"]
 [ext_resource type="Texture2D" uid="uid://cd1cp88f4yxr2" path="res://graphics/beer.png" id="8_73kkf"]
 [ext_resource type="Texture2D" uid="uid://buuuhmgkt7ov1" path="res://graphics/paw.png" id="9_n5sgd"]
 
+[ext_resource type="PackedScene" uid="uid://dy3877mcx2su5" path="res://healthbar.tscn" id="7_ss7kx"]
+
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vr3we"]
 size = Vector2(14, 24)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ha3k7"]
-size = Vector2(20, 6)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vnuri"]
 size = Vector2(18, 28)
@@ -169,6 +170,9 @@ _data = {
 &"idle": SubResource("Animation_saib0"),
 &"wall": SubResource("Animation_ogpgs")
 }
+=======
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ha3k7"]
+size = Vector2(20, 6)
 
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=541745859]
 script = ExtResource("1_08t41")
@@ -185,6 +189,18 @@ position_smoothing_enabled = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=852629338]
 shape = SubResource("RectangleShape2D_vr3we")
 
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2087655174]
+position = Vector2(-4.7683716e-07, 1.9073486e-06)
+scale = Vector2(0.011214115, 0.019138755)
+texture = ExtResource("1_ucweq")
+
+[node name="CharacterHitbox" type="Area2D" parent="." unique_id=1934439687]
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterHitbox" unique_id=838305767]
+shape = SubResource("RectangleShape2D_vnuri")
+
 [node name="DamageZone" type="Area2D" parent="." unique_id=704491951]
 collision_layer = 0
 collision_mask = 8
@@ -192,14 +208,6 @@ collision_mask = 8
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DamageZone" unique_id=1817675574]
 position = Vector2(20, -1)
 shape = SubResource("RectangleShape2D_ha3k7")
-
-[node name="CharacterHitbox" type="Area2D" parent="." unique_id=1934439687]
-collision_layer = 2
-collision_mask = 0
-monitoring = false
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterHitbox" unique_id=838305767]
-shape = SubResource("RectangleShape2D_vnuri")
 
 [node name="Sounds" type="Node" parent="." unique_id=1915223294]
 
@@ -238,3 +246,11 @@ texture = ExtResource("8_73kkf")
 [node name="head" type="Sprite2D" parent="body" unique_id=1695786403]
 position = Vector2(-1.46, -0.46000004)
 texture = ExtResource("6_c5rqy")
+
+[node name="Healthbar" parent="." unique_id=452027499 instance=ExtResource("7_ss7kx")]
+offset_left = -7.0
+offset_top = -16.0
+offset_right = 7.0
+offset_bottom = -13.0
+
+[connection signal="area_entered" from="DamageZone" to="." method="_on_damage_zone_area_entered"]

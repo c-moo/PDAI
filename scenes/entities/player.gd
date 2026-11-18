@@ -49,6 +49,8 @@ var wall_jump_timer: float = 0.0
 @export var damage_cooldown: float = 1.0
 
 var health = 100
+var health_max = 100
+var health_min = 0
 var dead: bool
 var can_take_damage: bool = true
 
