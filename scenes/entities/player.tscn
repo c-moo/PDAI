@@ -1,18 +1,175 @@
 [gd_scene format=3 uid="uid://bmryjg6sseq82"]
 
 [ext_resource type="Script" uid="uid://dpsdew4ixkdha" path="res://scenes/entities/player.gd" id="1_08t41"]
-[ext_resource type="Texture2D" uid="uid://bbm8k0mllq3kk" path="res://graphics/a07f1bdd-8bc3-477e-9816-e63e23741145.png" id="1_ucweq"]
 [ext_resource type="AudioStream" uid="uid://6idmqrmus4ag" path="res://sounds/jump.wav" id="3_1ie0h"]
 [ext_resource type="AudioStream" uid="uid://d0wwdw0pe15dh" path="res://sounds/hurt.wav" id="4_42nxq"]
 [ext_resource type="AudioStream" uid="uid://dvbkwegqntcuq" path="res://sounds/coin.wav" id="5_d4qa6"]
+[ext_resource type="Texture2D" uid="uid://bbm8k0mllq3kk" path="res://graphics/a07f1bdd-8bc3-477e-9816-e63e23741145.png" id="1_ucweq"]
 [ext_resource type="AudioStream" uid="uid://dy3lvur5knlbr" path="res://sounds/tap.wav" id="6_ss7kx"]
+[ext_resource type="Texture2D" uid="uid://blbigpxpk2pl8" path="res://graphics/head.png" id="6_c5rqy"]
+[ext_resource type="Texture2D" uid="uid://dx6rc3cex4xx" path="res://graphics/body.png" id="7_b6tgf"]
+[ext_resource type="Texture2D" uid="uid://cd1cp88f4yxr2" path="res://graphics/beer.png" id="8_73kkf"]
+[ext_resource type="Texture2D" uid="uid://buuuhmgkt7ov1" path="res://graphics/paw.png" id="9_n5sgd"]
+
 [ext_resource type="PackedScene" uid="uid://dy3877mcx2su5" path="res://healthbar.tscn" id="7_ss7kx"]
+
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vr3we"]
 size = Vector2(14, 24)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vnuri"]
 size = Vector2(18, 28)
+
+[sub_resource type="Animation" id="Animation_5ki56"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("body/beer:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-1.46, -0.46000004)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("body/head:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-1.46, -0.46000004)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("body:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-1.46, -0.46000004)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("body/paw:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-1.46, -0.46000004)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("body/paw:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_saib0"]
+resource_name = "idle"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("body/beer:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-1.46, -0.46000004), Vector2(-1.46, -1), Vector2(-1.46, -0.46000004), Vector2(-1.46, -1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("body/head:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-1.46, -0.46000004), Vector2(-1.46, -0.66)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("body:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-1.46, -0.46000004), Vector2(-1.46, -0.66)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("body/paw:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-1.46, -0.46000004), Vector2(-1.46, -0.66)]
+}
+
+[sub_resource type="Animation" id="Animation_ogpgs"]
+resource_name = "player"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("body/paw:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.26666668),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.9198622]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("body/paw:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.26666668),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-1.46, -0.46000004), Vector2(-3, 7)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_spk56"]
+_data = {
+&"RESET": SubResource("Animation_5ki56"),
+&"idle": SubResource("Animation_saib0"),
+&"wall": SubResource("Animation_ogpgs")
+}
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ha3k7"]
 size = Vector2(20, 6)
@@ -69,6 +226,26 @@ volume_db = -25.0
 [node name="attack_sound" type="AudioStreamPlayer" parent="Sounds" unique_id=731281975]
 stream = ExtResource("6_ss7kx")
 volume_db = -25.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1634984420]
+libraries/ = SubResource("AnimationLibrary_spk56")
+
+[node name="body" type="Sprite2D" parent="." unique_id=662769500]
+position = Vector2(-1.46, -0.46000004)
+scale = Vector2(0.02, 0.02)
+texture = ExtResource("7_b6tgf")
+
+[node name="paw" type="Sprite2D" parent="body" unique_id=237822625]
+position = Vector2(-1.46, -0.46000004)
+texture = ExtResource("9_n5sgd")
+
+[node name="beer" type="Sprite2D" parent="body" unique_id=4046765]
+position = Vector2(-1.46, -0.46000004)
+texture = ExtResource("8_73kkf")
+
+[node name="head" type="Sprite2D" parent="body" unique_id=1695786403]
+position = Vector2(-1.46, -0.46000004)
+texture = ExtResource("6_c5rqy")
 
 [node name="Healthbar" parent="." unique_id=452027499 instance=ExtResource("7_ss7kx")]
 offset_left = -7.0
