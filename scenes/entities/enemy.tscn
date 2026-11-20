@@ -14,15 +14,15 @@ size = Vector2(30, 25)
 size = Vector2(34, 27)
 
 [node name="Enemy" type="CharacterBody2D" unique_id=898509981]
-position = Vector2(181, -29)
+position = Vector2(178, -29)
 script = ExtResource("1_4gyqm")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=223735802]
-position = Vector2(37.5, -16)
+position = Vector2(0, -3)
 shape = SubResource("RectangleShape2D_ha3k7")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=879621333]
-position = Vector2(37.749992, -15.500002)
+position = Vector2(-7.6293945e-06, -3)
 scale = Vector2(0.038194433, 0.031081088)
 texture = ExtResource("2_qi2p4")
 
@@ -31,28 +31,29 @@ wait_time = 2.0
 autostart = true
 
 [node name="HitboxEnemy" type="Area2D" parent="." unique_id=1921925011]
-position = Vector2(18, -22)
+position = Vector2(0, -5)
 collision_layer = 8
 collision_mask = 0
 monitoring = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxEnemy" unique_id=447593069]
-position = Vector2(20, 6.5)
+position = Vector2(0, 2)
 shape = SubResource("RectangleShape2D_vnuri")
 
 [node name="DamageAreaEnemy" type="Area2D" parent="." unique_id=327225608]
+position = Vector2(0, -7)
 collision_layer = 0
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DamageAreaEnemy" unique_id=547142654]
-position = Vector2(38, -15.5)
+position = Vector2(0, 4)
 shape = SubResource("RectangleShape2D_elhfd")
 
 [node name="Healthbar" parent="." unique_id=452027499 instance=ExtResource("3_ktqfp")]
-offset_left = 20.0
-offset_top = -35.0
-offset_right = 57.0
-offset_bottom = -30.0
+offset_left = -19.0
+offset_top = -23.0
+offset_right = 18.0
+offset_bottom = -18.0
 metadata/_edit_use_anchors_ = true
 
 [connection signal="area_entered" from="DamageAreaEnemy" to="." method="_on_damage_area_enemy_area_entered"]
