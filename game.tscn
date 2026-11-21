@@ -10,8 +10,7 @@ script = ExtResource("1_7jktm")
 [node name="World" type="Node" parent="." unique_id=1467323747]
 
 [node name="CharacterBody2D" parent="." unique_id=541745859 instance=ExtResource("2_feb5d")]
-z_index = 1
-position = Vector2(12, -32)
+position = Vector2(19, -31)
 metadata/_edit_group_ = true
 
 [node name="Camera2D" parent="CharacterBody2D" index="0" unique_id=319896125]
@@ -21,7 +20,7 @@ limit_top = -140
 limit_bottom = 5
 
 [node name="Enemy" parent="." unique_id=898509981 instance=ExtResource("3_feb5d")]
-position = Vector2(733, -129)
+position = Vector2(331, -44)
 collision_layer = 2
 
 [editable path="CharacterBody2D"]

@@ -16,7 +16,7 @@ var player_overlapping: bool = false
 @export var damage_to_deal: int = 25
 @export var enemy_attack_cooldown: float = 1.0
 
-var knockback = -200
+var knockback = 	200
 
 var dir: Vector2
 const gravity = 100
@@ -29,10 +29,9 @@ func _ready():
 	Global.enemyDamageAmount = damage_to_deal
 	Global.enemyDamageArea = $DamageAreaEnemy
 
-func _process(delta):
+func _physics_process(delta):
 	if !is_on_floor():
 		velocity.y += gravity * delta
-		velocity.x = 0
 		
 	if is_on_wall() and is_on_floor():
 		velocity.y = -125
@@ -54,11 +53,12 @@ func move(delta):
 		if !is_enemy_chase:
 			velocity += dir * speed * delta
 		elif is_enemy_chase and !taking_damage:
-			var dir_to_player = position.direction_to(player.position) * speed
-			velocity.x = dir_to_player.x
+			var direction = sign(player.global_position.x - global_position.x)
+			velocity.x = direction * speed
 		elif taking_damage:
-			var knockback_dir = position.direction_to(player.position) * knockback
+			var knockback_dir = player.global_position.direction_to(global_position) * knockback
 			velocity.x = knockback_dir.x
+			velocity.y = -50
 		is_roaming = true
 	else:
 		velocity.x = 0

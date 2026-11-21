@@ -1,24 +1,25 @@
 [gd_scene format=3 uid="uid://bmryjg6sseq82"]
 
 [ext_resource type="Script" uid="uid://dpsdew4ixkdha" path="res://scenes/entities/player.gd" id="1_08t41"]
+[ext_resource type="Texture2D" uid="uid://bbm8k0mllq3kk" path="res://graphics/a07f1bdd-8bc3-477e-9816-e63e23741145.png" id="1_ucweq"]
 [ext_resource type="AudioStream" uid="uid://6idmqrmus4ag" path="res://sounds/jump.wav" id="3_1ie0h"]
 [ext_resource type="AudioStream" uid="uid://d0wwdw0pe15dh" path="res://sounds/hurt.wav" id="4_42nxq"]
 [ext_resource type="AudioStream" uid="uid://dvbkwegqntcuq" path="res://sounds/coin.wav" id="5_d4qa6"]
-[ext_resource type="Texture2D" uid="uid://bbm8k0mllq3kk" path="res://graphics/a07f1bdd-8bc3-477e-9816-e63e23741145.png" id="1_ucweq"]
-[ext_resource type="AudioStream" uid="uid://dy3lvur5knlbr" path="res://sounds/tap.wav" id="6_ss7kx"]
 [ext_resource type="Texture2D" uid="uid://blbigpxpk2pl8" path="res://graphics/head.png" id="6_c5rqy"]
+[ext_resource type="AudioStream" uid="uid://dy3lvur5knlbr" path="res://sounds/tap.wav" id="6_ss7kx"]
 [ext_resource type="Texture2D" uid="uid://dx6rc3cex4xx" path="res://graphics/body.png" id="7_b6tgf"]
+[ext_resource type="PackedScene" uid="uid://dy3877mcx2su5" path="res://healthbar.tscn" id="7_ss7kx"]
 [ext_resource type="Texture2D" uid="uid://cd1cp88f4yxr2" path="res://graphics/beer.png" id="8_73kkf"]
 [ext_resource type="Texture2D" uid="uid://buuuhmgkt7ov1" path="res://graphics/paw.png" id="9_n5sgd"]
-
-[ext_resource type="PackedScene" uid="uid://dy3877mcx2su5" path="res://healthbar.tscn" id="7_ss7kx"]
-
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vr3we"]
 size = Vector2(14, 24)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vnuri"]
 size = Vector2(18, 28)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ha3k7"]
+size = Vector2(20, 6)
 
 [sub_resource type="Animation" id="Animation_5ki56"]
 length = 0.001
@@ -170,9 +171,6 @@ _data = {
 &"idle": SubResource("Animation_saib0"),
 &"wall": SubResource("Animation_ogpgs")
 }
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ha3k7"]
-size = Vector2(20, 6)
 
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=541745859]
 script = ExtResource("1_08t41")
