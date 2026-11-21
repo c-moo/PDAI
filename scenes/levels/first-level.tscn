@@ -2,7 +2,9 @@
 
 [ext_resource type="Script" uid="uid://bdl8u2mb0shfl" path="res://assets/scripts/first_level.gd" id="1_cobx6"]
 [ext_resource type="Texture2D" uid="uid://d3lvmabrub7cr" path="res://assets/sprites/world_tileset.png" id="1_n8flv"]
+[ext_resource type="Script" uid="uid://hs22vrhb78fe" path="res://assets/scripts/background.gd" id="2_dvysc"]
 [ext_resource type="PackedScene" uid="uid://dx3u2n8agyfok" path="res://scenes/killzone.tscn" id="3_kgjob"]
+[ext_resource type="Texture2D" uid="uid://u6c4td4kbtpy" path="res://graphics/deep_purple.png" id="3_ugy8c"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5qyo0"]
 texture = ExtResource("1_n8flv")
@@ -154,6 +156,15 @@ size = Vector2(20, 419)
 
 [node name="01-level" type="Node2D" unique_id=1278329931]
 script = ExtResource("1_cobx6")
+
+[node name="Background" type="CanvasLayer" parent="." unique_id=1167573621]
+layer = -1
+script = ExtResource("2_dvysc")
+
+[node name="TextureRect" type="TextureRect" parent="Background" unique_id=296986916]
+texture = ExtResource("3_ugy8c")
+expand_mode = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="TileMap" type="TileMap" parent="." unique_id=1136710093]
 tile_set = SubResource("TileSet_tn83y")
