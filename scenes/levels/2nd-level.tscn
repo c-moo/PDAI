@@ -2,7 +2,9 @@
 
 [ext_resource type="Script" uid="uid://csuv7r7iutbxj" path="res://assets/scripts/2nd_level.gd" id="1_rsggl"]
 [ext_resource type="Texture2D" uid="uid://bebp6bo1ogw6t" path="res://assets/sprites/JumpsNPipes_Tileset.png" id="1_yc4ce"]
+[ext_resource type="Script" uid="uid://hs22vrhb78fe" path="res://assets/scripts/background.gd" id="2_e5gx5"]
 [ext_resource type="PackedScene" uid="uid://dx3u2n8agyfok" path="res://scenes/killzone.tscn" id="3_ct68p"]
+[ext_resource type="Texture2D" uid="uid://u6c4td4kbtpy" path="res://graphics/deep_purple.png" id="3_ipb35"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pvf4q"]
 texture = ExtResource("1_yc4ce")
@@ -344,6 +346,15 @@ size = Vector2(20, 419)
 
 [node name="02-level" type="Node2D" unique_id=1783869480]
 script = ExtResource("1_rsggl")
+
+[node name="Background" type="CanvasLayer" parent="." unique_id=1297411370]
+layer = -1
+script = ExtResource("2_e5gx5")
+
+[node name="TextureRect" type="TextureRect" parent="Background" unique_id=793933602]
+texture = ExtResource("3_ipb35")
+expand_mode = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="TileMap" type="TileMap" parent="." unique_id=1326150828]
 tile_set = SubResource("TileSet_tn83y")
