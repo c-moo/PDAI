@@ -34,7 +34,6 @@ autostart = true
 position = Vector2(0, -5)
 collision_layer = 8
 collision_mask = 0
-monitoring = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxEnemy" unique_id=447593069]
 position = Vector2(0, 2)
@@ -56,5 +55,10 @@ offset_right = 18.0
 offset_bottom = -18.0
 metadata/_edit_use_anchors_ = true
 
+[node name="GroundDetector" type="RayCast2D" parent="." unique_id=622258106]
+position = Vector2(23, 8)
+target_position = Vector2(0, 12)
+
+[connection signal="area_entered" from="HitboxEnemy" to="." method="_on_hitbox_enemy_area_entered"]
 [connection signal="area_entered" from="DamageAreaEnemy" to="." method="_on_damage_area_enemy_area_entered"]
 [connection signal="area_exited" from="DamageAreaEnemy" to="." method="_on_damage_area_enemy_area_exited"]

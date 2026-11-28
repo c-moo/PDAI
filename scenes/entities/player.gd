@@ -246,6 +246,7 @@ func damage_enemy(area: Area2D):
 			return
 
 		if enemy.dead:
+			enemy.apply_knockback()
 			hurt_sound.play()
 			return
 
